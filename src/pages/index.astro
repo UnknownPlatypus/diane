@@ -10,18 +10,24 @@ import Button from '../components/Button.astro';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diane's Ugly Hellowatt Page</title>
+    <title>Diane's Comic Sans MS Appreciation Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.cdnfonts.com/css/comic-sans');
         body {
             font-family: 'Comic Sans MS', sans-serif;
         }
+        .move-button {
+            transition: all 0.3s ease;
+        }
+        .move-button:hover {
+            transform: translate(10px, -10px);
+        }
     </style>
 </head>
 <body class="bg-yellow-300 text-purple-700">
     <header class="bg-pink-500 p-4 text-center">
-        <h1 class="text-4xl font-bold text-green-400 animate-bounce">Welcome to Diane's World!</h1>
+        <h1 class="text-4xl font-bold text-green-400 animate-bounce">Welcome to Diane's Portfolio!</h1>
     </header>
     
     <main class="container mx-auto p-4">
@@ -30,24 +36,70 @@ import Button from '../components/Button.astro';
             <p class="text-xl leading-loose">
                 Hey there! I'm Diane, the AWESOME product designer at Hellowatt! 
                 I love making things look SUPER COOL and FUNCTIONAL! 
+				<br>
                 My favorite color is neon green, and I use it EVERYWHERE in my designs!
             </p>
         </section>
         
-        <section class="bg-green-200 p-6 rounded-lg shadow-lg">
+        <section class="bg-green-200 p-6 rounded-lg shadow-lg mb-8">
             <h2 class="text-3xl font-bold text-red-600 mb-4">Diane's Design Philosophy</h2>
             <ul class="list-disc list-inside text-xl space-y-2">
                 <li>More fonts = More fun!</li>
                 <li>Clashing colors are the new black!</li>
                 <li>If it doesn't blink, it's not finished!</li>
                 <li>Comic Sans is the ONLY professional font!</li>
+                <li>Why use one exclamation mark when you can use five!!!!!</li>
             </ul>
+        </section>
+
+        <section class="bg-blue-200 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-3xl font-bold text-yellow-600 mb-4">Why Comic Sans MS is the Greatest Font Ever!</h2>
+            <ul class="list-none list-inside text-xl space-y-4">
+                <li>🎨 It's fun and whimsical! Who said professional had to be boring?</li>
+                <li>😊 It's super friendly and approachable. Your users will feel right at home!</li>
+                <li>🧠 It's easy to read for people with dyslexia. Inclusivity for the win!</li>
+                <li>🦸‍♀️ It has superpowers - it can make any message look exciting!</li>
+                <li>🎢 It adds a rollercoaster of emotion to every sentence!</li>
+                <li>🌈 It's versatile - perfect for both birthday invitations AND annual reports!</li>
+                <li>💪 It's bold enough to stand up to the haters. Comic Sans fears no critic!</li>
+                <li>🕰️ It's timeless - still going strong since 1994!</li>
+                <li>🌟 It turns every document into a work of art. Move over, Picasso!</li>
+                <li>🤓 Using it makes you part of an elite club of design mavericks!</li>
+            </ul>
+        </section>
+
+        <section class="bg-purple-200 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-3xl font-bold text-orange-600 mb-4">Diane's Magic Buttons</h2>
+            <div class="flex flex-wrap gap-4">
+                <button class="move-button bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full animate-pulse">
+                    Click me!
+                </button>
+                <button class="move-button bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full animate-bounce">
+                    No, click me!
+                </button>
+                <button class="move-button bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full animate-spin">
+                    I'm spinning!
+                </button>
+                <button class="move-button bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full animate-ping">
+                    Ping pong!
+                </button>
+				
+            </div>
         </section>
     </main>
     
     <footer class="bg-purple-400 p-4 text-center mt-8">
         <p class="text-yellow-200 text-lg">© 2024 Diane's Hellowatt Designs - Making the web ugly, one site at a time!</p>
+        <p class="text-yellow-200 text-lg">Remember: In the world of web design, there's a thin line between genius and madness. Diane erased that line!</p>
     </footer>
-	<Button>Tailwind Button in Astro!</Button>
+
+    <script>
+		import confetti from 'canvas-confetti';
+        document.querySelectorAll('.move-button').forEach(button => {
+            button.addEventListener('click', () => {
+				confetti();
+            });
+        });
+    </script>
 </body>
 </html>
